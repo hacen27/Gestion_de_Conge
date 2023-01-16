@@ -1,0 +1,73 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin-right: 10px;
+}
+
+nav a:hover {
+    color: #0070c9;
+}
+
+/* Form styles */
+form {
+    margin: 20px;
+}
+
+form input[type="text"],form input[type="email"],
+form input[type="date"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 50%;
+    box-sizing: border-box;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding-left: 40px;
+}
+
+form input[type="submit"] {
+    background-color: #0070c9;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #004d80;
+}
+
+form .error {
+    color: red;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table th {
+    background-color: #f2f2f2;
+}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<h1>Leave Request Form</h1>
+
+<form method="post">
+   {% comment %} {% csrf_token %}
+    {{ form.as_p }} {% endcomment %}
+    {% csrf_token %} 
+
+
+ {% for field in form %}
+    <div class="form-group {% if field.errors %}has-error{% endif %}">
+        {{ field.label_tag }} {{ field }}
+        {% for error in field.errors %}
+            <p class="help-block">{{ error }}</p>
+        {% endfor %}
+
+    </div>
+   
+{% endfor %} 
+<input type="submit" value="Submit">
+</form>
+
+{% endblock %}
+

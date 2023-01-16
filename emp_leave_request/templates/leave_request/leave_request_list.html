@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Demande des Conges</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Employee</th>
+            <th>Type de Conge</th>
+            <th>Date Debut</th>
+            <th>Date Fin</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for leave_request in leave_requests %}
+        <tr>
+            <td>{{ leave_request.employee.nom }}</td>
+            <td>{{ leave_request.type_of_leave }}</td>
+            <td>{{ leave_request.start_date }}</td>
+            <td>{{ leave_request.end_date }}</td>
+            {% comment %} <td  >{{ l#DDEEEE approved }}</td> {% endcomment %}
+            {% if leave_request.status == 'rejected' %}
+            <td style="background-color:#FF0000" >{{ leave_request.status }}</td>
+            {% elif leave_request.status == 'pending' %}
+                <td style="background-color:#80ddEE" >{{ leave_request.status }}</td>
+            {% elif leave_request.status == 'approved' %}
+                <td style="background-color:#0000ff" >{{ leave_request.status }}</td>
+            {% else %}
+            <td  >{{ leave_request.status }}</td>
+            {% endif %} 
+            
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

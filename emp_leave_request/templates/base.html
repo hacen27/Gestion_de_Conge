@@ -1,0 +1,27 @@
+{% load static %}
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+  
+            <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+        
+        
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'leave_request_form' %}">Leave Request Form</a>
+                <a href="{% url 'leave_request_list' %}">Leave Requests</a>
+            </nav>
+        </header>
+        {% block content %}
+        
+        {% endblock %}
+        <footer>
+            <p>Copyright © 3team Technology</p>
+        </footer>
+        <script src="{% static 'js/script.js' %}"></script>
+
+    </body>
+</html>
